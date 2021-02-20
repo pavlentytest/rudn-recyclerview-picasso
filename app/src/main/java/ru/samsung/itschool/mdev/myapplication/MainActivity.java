@@ -1,6 +1,7 @@
 package ru.samsung.itschool.mdev.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.list);
         // с помощью LayoutManager указываем как отображать элементы списка - линейно
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(new DataAdapter(prepareData()));
+        recyclerView.setAdapter(new DataAdapter(prepareData(),this));
     }
 
     public ArrayList prepareData() {
